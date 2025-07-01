@@ -9,7 +9,8 @@ from shazamio import Shazam
 
 parser = argparse.ArgumentParser(description="Identifica músicas em vídeos usando Shazam")
 parser.add_argument("--verbose", action="store_true", help="Exibir detalhes adicionais")
-args = parser.parse_args()
+# When imported as a module, ignore command line arguments
+args = parser.parse_args([])
 
 def selecionar_pasta(titulo):
     root = tk.Tk()
@@ -104,6 +105,10 @@ async def processar_videos(pasta_videos, pasta_resultados):
     limpar_pasta(pasta_audios)
 
 if __name__ == "__main__":
+    # Parse real command line arguments when running directly
+    args = parser.parse_args()
+
     pasta_videos = selecionar_pasta("Selecione a pasta com os vídeos")
     pasta_resultados = selecionar_arquivo("Escolha onde salvar o arquivo de resultados")
+    
     asyncio.run(processar_videos(pasta_videos, pasta_resultados))
