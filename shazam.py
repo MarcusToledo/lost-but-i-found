@@ -103,7 +103,7 @@ async def processar_videos(pasta_videos, pasta_resultados):
 
     limpar_pasta(pasta_audios)
 
-pasta_videos = selecionar_pasta("Selecione a pasta com os vídeos")
-pasta_resultados = selecionar_arquivo("Escolha onde salvar o arquivo de resultados")
-
-asyncio.run(processar_videos(pasta_videos, pasta_resultados))
+if __name__ == "__main__":
+    pasta_videos = selecionar_pasta("Selecione a pasta com os vídeos")
+    pasta_resultados = selecionar_arquivo("Escolha onde salvar o arquivo de resultados")
+    asyncio.run(processar_videos(pasta_videos, pasta_resultados))
