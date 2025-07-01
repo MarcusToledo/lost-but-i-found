@@ -11,10 +11,10 @@ This project identifies songs in video or audio files using [Shazam](https://git
   - `shazamio`
   - `tkinter` (included with most Python installs)
 
-Install the dependencies with `pip`:
+Install the required Python packages with:
 
 ```bash
-pip install ffmpeg-python shazamio
+pip install -r requirements.txt
 ```
 
 ## Usage
