@@ -14,12 +14,16 @@ args = parser.parse_args()
 def selecionar_pasta(titulo):
     root = tk.Tk()
     root.withdraw()
-    return filedialog.askdirectory(title=titulo)
+    pasta = filedialog.askdirectory(title=titulo)
+    root.destroy()
+    return pasta
 
 def selecionar_arquivo(titulo):
     root = tk.Tk()
     root.withdraw()
-    return filedialog.asksaveasfilename(title=titulo, defaultextension=".txt", filetypes=[("Arquivos de texto", "*.txt")])
+    arquivo = filedialog.asksaveasfilename(title=titulo, defaultextension=".txt", filetypes=[("Arquivos de texto", "*.txt")])
+    root.destroy()
+    return arquivo
 
 async def reconhecer_musica(audio_path):
     shazam = Shazam()
