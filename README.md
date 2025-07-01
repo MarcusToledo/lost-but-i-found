@@ -13,7 +13,7 @@ This project identifies songs in video or audio files using [Shazam](https://git
 
 Install the required Python packages with:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
